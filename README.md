@@ -13,7 +13,7 @@ GNUCobol 2.2 rc (https://sourceforge.net/p/open-cobol/)
 
 ## QuickUsage
 
-### Created rpmbuild structure in root
+### Created rpmbuild structure in /root
 
 ```
 /root/rpmbuild/
@@ -25,7 +25,7 @@ GNUCobol 2.2 rc (https://sourceforge.net/p/open-cobol/)
 /root/rpmbuild/SRPMS
 ```
 
-### Put Files in folders
+### Put files in folders
 
 ```
 /root/rpmbuild/SOURCES/gnucobol-2.2-rc.tar.gz
