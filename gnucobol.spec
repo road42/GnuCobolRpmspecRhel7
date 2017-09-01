@@ -1,6 +1,6 @@
 Name:           gnucobol
 Version:        2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        GnuCOBOL - COBOL compiler and runtime library
 
 # Packager:     Whoever
@@ -14,7 +14,7 @@ Source:         https://ftp.gnu.org/gnu/%{name}/%{name}-%{version}-rc.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-rc-%{release}-root-%(%{__id_u} -n)
 
 Provides:       gnucobol = 2.2
-Obsoletes:      gnucobol <= 2.2
+Obsoletes:      gnucobol < 2.2
 
 BuildRequires:  gcc
 BuildRequires:  glibc-devel
