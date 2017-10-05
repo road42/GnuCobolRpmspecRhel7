@@ -9,7 +9,7 @@ So I modified it to run on RHEL 7
 ## Version
 
 This is tested with RHEL 7.4 and
-GNUCobol 2.2 rc (https://sourceforge.net/p/open-cobol/)
+GNUCobol 2.2 (https://sourceforge.net/p/open-cobol/)
 
 ## QuickUsage
 
@@ -28,7 +28,7 @@ GNUCobol 2.2 rc (https://sourceforge.net/p/open-cobol/)
 ### Put files in folders
 
 ```
-/root/rpmbuild/SOURCES/gnucobol-2.2-rc.tar.gz
+/root/rpmbuild/SOURCES/gnucobol-2.2.tar.gz
 /root/rpmbuild/SPECS/gnucobol.spec
 ```
 
