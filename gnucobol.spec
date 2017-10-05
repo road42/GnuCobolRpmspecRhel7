@@ -1,6 +1,6 @@
 Name:           gnucobol
 Version:        2.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        GnuCOBOL - COBOL compiler and runtime library
 
 # Packager:     Whoever
@@ -9,9 +9,9 @@ Group:          Development/Languages/Other
 License:        GPLv3+/LGPLv3+
 
 URL:            https://www.gnu.org/software/gnucobol/
-Source:         https://ftp.gnu.org/gnu/%{name}/%{name}-%{version}-rc.tar.gz
+Source:         https://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
 
-BuildRoot:      %{_tmppath}/%{name}-%{version}-rc-%{release}-root-%(%{__id_u} -n)
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:       gnucobol = 2.2
 Obsoletes:      gnucobol < 2.2
@@ -52,7 +52,7 @@ COBOL 2002 and COBOL 2014 standards, as well as many extensions included in othe
 GnuCOBOL translates COBOL into C and compiles the translated code using a native C compiler.
 
 %prep
-%setup -q -n %{name}-%{version}-rc
+%setup -q -n %{name}-%{version}
 
 %build
 ./configure --enable-debug \
