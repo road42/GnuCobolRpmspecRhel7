@@ -30,6 +30,7 @@ GNUCobol 2.2 (https://sourceforge.net/p/open-cobol/)
 ```
 /root/rpmbuild/SOURCES/gnucobol-2.2.tar.gz
 /root/rpmbuild/SPECS/gnucobol.spec
+/root/rpmbuild/SPECS/libcob.spec
 ```
 
 ### Build
@@ -37,4 +38,15 @@ GNUCobol 2.2 (https://sourceforge.net/p/open-cobol/)
 ```
 cd /root/
 rpmbuild -ba rpmbuild/SPECS/gnucobol.spec
+rpmbuild -ba rpmbuild/SPECS/libcob.spec
+```
+
+### Install
+
+Use the packages from `/root/rpmbuild/RPMS/x86_64`. The software compiled with
+`cobc` only needs the `libcob`-packages to run.
+
+```
+rpm -Uvh libcob*rpm
+rpm -Uvh gnucobol*rpm
 ```
