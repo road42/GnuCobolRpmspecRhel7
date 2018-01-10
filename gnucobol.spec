@@ -1,7 +1,7 @@
 Name:           gnucobol
 Version:        2.2
-Release:        3%{?dist}
-Summary:        GnuCOBOL - COBOL compiler and runtime library
+Release:        4%{?dist}
+Summary:        GnuCOBOL - COBOL compiler
 
 # Packager:     Whoever
 
@@ -42,6 +42,7 @@ Requires:       gmp >= 4.1.4
 Requires:       gmp-devel >= 4.1.4
 Requires:       libdb >= 4.1.24
 Requires:       ncurses-libs >= 5.4
+Requires:       libcob >= 2.2
 
 Requires(post): /sbin/install-info
 
@@ -61,7 +62,7 @@ GnuCOBOL translates COBOL into C and compiles the translated code using a native
         --program-prefix=%{?_program_prefix} \
         --disable-dependency-tracking \
         --prefix=%{_prefix} \
-         --exec-prefix=%{_exec_prefix} \
+        --exec-prefix=%{_exec_prefix} \
         --bindir=%{_bindir} \
         --sbindir=%{_sbindir} \
         --sysconfdir=%{_sysconfdir} \
@@ -79,6 +80,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/%{_infodir}/dir
+rm -rf $RPM_BUILD_ROOT/%{_libdir}
 
 %find_lang %{name}
 
@@ -95,10 +97,6 @@ make check
 %{_includedir}/*
 %{_datadir}/gnucobol
 %{_infodir}/gnucobol.info*
-%{_libdir}/libcob.so*
-%{_libdir}/libcob.a
-%{_libdir}/libcob.la
-%{_libdir}/gnucobol/CBL_OC_DUMP.so
 %{_mandir}/man1/*
 
 %clean
@@ -107,12 +105,12 @@ rm -rf $RPM_BUILD_DIR/%{name}-%{version}
 
 %post
 /sbin/install-info %{_infodir}/gnucobol.info %{_infodir}/dir 2>/dev/null || :
-/sbin/ldconfig
 
 %postun
 if [ $1 = 0 ]; then
   /sbin/install-info --delete %{_infodir}/gnucobol.info %{_infodir}/dir 2>/dev/null || :
 fi
-/sbin/ldconfig
 
 %changelog
+* Wed Jan 10 2018 Christoph Jahn
+- Separated 'libcob*'
